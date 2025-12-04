@@ -31,7 +31,7 @@ const projects: Project[] = [
       "LangChain",
     ],
     image: projDebate,
-    github: "http://github.com/Okesh101",
+    github: "https://github.com/Okesh101",
     live: "https://gai-debate.onrender.com/",
   },
   {
@@ -49,8 +49,8 @@ const projects: Project[] = [
       "Personal portfolio built with Vite, TypeScript and custom UI engineering.",
     tech: ["React", "TypeScript", "CSS"],
     image: projPortfolio,
-    github: "#",
-    live: "#",
+    github: "https://github.com/Okesh101/My-Portfolio",
+    live: "https://Okesh101.github.io/My-Portfolio/",
   },
   {
     title: "Exam Portal",
@@ -58,7 +58,7 @@ const projects: Project[] = [
       "A modern school exam system built with React frontend and Crow (C++) backend.",
     tech: ["React", "TypeScript", "C++", "Crow", "JSON"],
     image: projExam,
-    github: "#",
+    github: "https://github.com/Okesh101",
     live: "#",
   },
 ];
