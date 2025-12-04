@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Okesh101.github.io/My-Portfolio",
+  "homepage": "https://Okesh101.github.io/My-Portfolio/",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -8,8 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "serve": "vite preview",
-    "start": "vite",
+    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
