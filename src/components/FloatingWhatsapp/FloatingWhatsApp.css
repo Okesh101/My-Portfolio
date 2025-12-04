@@ -1,0 +1,54 @@
+.floating-whatsapp {
+  position: fixed;
+  bottom: 28px;
+  right: 26px;
+  font-size: 32px;
+  background: #25D366;
+  color: #ffffff;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.whatsapp-tooltip {
+  background: #ffffff;
+  color: #111;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+.floating-whatsapp-wrapper:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight pulse animation / hover enhancement */
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+}
+
+/* Bounce animation to attract attention */
+@keyframes whatsappBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.floating-whatsapp {
+  animation: whatsappBounce 3s infinite ease-in-out;
+}

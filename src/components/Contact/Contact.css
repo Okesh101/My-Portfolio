@@ -1,0 +1,141 @@
+.contact {
+  padding: 120px 100px;
+}
+
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  align-items: start;
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-family: 'Poppins', sans-serif;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  resize: none;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+.send {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #051026;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.send:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.card {
+  padding: 20px;
+  background: var(--panel);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+
+.profile-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.contact-info a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.socials a {
+  font-size: 22px;
+  color: var(--text);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-3px);
+  color: var(--accent);
+}
+
+.socials a.whatsapp {
+  font-size: 24px;
+}
+
+.socials a.github:hover {
+  color: #4078c0; /* official github blue */
+}
+
+.socials a.linkedin:hover {
+  color: #0A66C2; /* official linkedin blue */
+}
+
+.socials a.whatsapp:hover {
+  color: #25D366; /* official whatsapp green */
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .send {
+    align-self: center;
+  }
+}
