@@ -55,7 +55,7 @@ export default function Navbar() {
             Contact
           </a>
           <a
-            href="GOODLUCK_RESUME.pdf"
+            href="/My-Portfolio/GOODLUCK_RESUME.pdf"
             className="btn"
             target="_blank"
             rel="noreferrer"

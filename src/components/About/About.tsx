@@ -12,19 +12,26 @@ export default function About() {
         <div className="about-text">
           <p>
             Hi, I'm <strong>Goodluck</strong> — a passionate{" "}
-            <span className="highlight">C++ developer</span> who loves solving
+            <span className="highlight">C++ programmer</span> who loves solving
             problems and building things that actually work.
           </p>
 
           <p>
             I enjoy working with <strong>modern, efficient technologies</strong>
-            — from React & TypeScript on the front-end to C++ systems and
-            tooling.
+            , whether I'm crafting web applications in TypeScript or solving
+            complex problems with the speed and precision of C++.
           </p>
 
           <p>
-            My interests include system architecture, performance tuning,
-            back-end services, and clean user experience principles.
+            I build software using a diverse stack, ranging from performance
+            logic in C++ to modern web interfaces with React and TypeScript. I
+            use Crow, Flask and SQLite3 for lightweight services.
+          </p>
+
+          <p>
+            My technical interests span the full spectrum of modern engineering:
+            from robotics and cybersecurity to intelligent systems (AI/ML) and
+            the creation of intuitive, user-centric software.
           </p>
 
           <p>
@@ -38,11 +45,10 @@ export default function About() {
               <span>C++</span>
               <span>React</span>
               <span>TypeScript</span>
-              <span>UI Engineering</span>
               <span>Custom CSS</span>
+              <span>Flask</span>
               <span>Crow Framework</span>
               <span>Sqlite3</span>
-              <span>Git / CI basics</span>
             </div>
           </div>
         </div>

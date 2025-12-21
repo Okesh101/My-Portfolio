@@ -17,9 +17,9 @@ export default function Footer() {
           <a href="https://github.com/Okesh101" target="_blank">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/" target="_blank">
+          {/* <a href="https://linkedin.com/" target="_blank">
             <FaLinkedin />
-          </a>
+          </a> */}
           <a
             href="https://wa.me/2348144152544?text=Hello%20Goodluck"
             target="_blank"

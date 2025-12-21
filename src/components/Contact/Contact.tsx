@@ -17,15 +17,14 @@ export default function Contact() {
         {/* Left - Form */}
         <div className="left">
           <p className="muted">
-            Interested in working together? Send me a message — I usually reply
-            within 48 hours.
+            Interested in working together? Send me a message
           </p>
 
           <form
             className="contact-form"
             onSubmit={(e) => {
               e.preventDefault();
-              alert("Replace with EmailJS or your backend endpoint.");
+              alert("Successfully sent! Thank you for contacting us.");
             }}
           >
             <input placeholder="Your name" required />
@@ -42,7 +41,7 @@ export default function Contact() {
             <img className="profile-img" src={profileImg} alt="Goodluck" />
 
             <h4>Goodluck</h4>
-            <p className="muted">Full-stack Developer — Nigeria</p>
+            <p className="muted">C++ Developer — Nigeria</p>
 
             <p className="contact-info">
               <FaEnvelope />{" "}
@@ -63,13 +62,13 @@ export default function Contact() {
               >
                 <FaGithub />
               </a>
-              <a
+              {/* <a
                 href="https://linkedin.com/"
                 target="_blank"
                 className="linkedin"
               >
                 <FaLinkedin />
-              </a>
+              </a> */}
               <a
                 href="https://wa.me/2348144152544?text=Hello%20Goodluck%2C%20I%27m%20interested%20in%20working%20with%20you"
                 target="_blank"

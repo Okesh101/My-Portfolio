@@ -1,5 +1,5 @@
 .contact {
-  padding: 120px 100px;
+  padding: 50px 150px;
 }
 
 .contact-grid {
@@ -78,7 +78,14 @@ textarea:focus {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent);
-  margin-bottom: 10px;
+}
+
+.card h4 {
+  margin: 10px 0 8px;
+}
+
+.card p {
+  margin: 0 0 8px;
 }
 
 .contact-info {
@@ -103,7 +110,7 @@ textarea:focus {
 }
 
 .socials a {
-  font-size: 22px;
+  font-size: 25px;
   color: var(--text);
   transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -114,7 +121,7 @@ textarea:focus {
 }
 
 .socials a.whatsapp {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .socials a.github:hover {

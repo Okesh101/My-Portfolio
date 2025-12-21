@@ -6,6 +6,8 @@ import projExam from "../../assets/proj_exam.png";
 import projPortfolio from "../../assets/proj_portfolio.png";
 import projPassword from "../../assets/proj_ps-checker.png";
 import projDebate from "../../assets/proj_debate.png";
+import projFace from "../../assets/proj_face_auth.png";
+import projJob from "../../assets/proj_job.png"
 
 type Project = {
   title: string;
@@ -26,7 +28,6 @@ const projects: Project[] = [
       "TypeScript",
       "Tailwind CSS",
       "OpenAI API",
-      "Python",
       "Flask",
       "LangChain",
     ],
@@ -55,11 +56,29 @@ const projects: Project[] = [
   {
     title: "Exam Portal",
     description:
-      "A modern school exam system built with React frontend and Crow (C++) backend.",
+      "A modern school exam system built with React for the frontend and Crow (C++) for the backend.",
     tech: ["React", "TypeScript", "C++", "Crow", "JSON"],
     image: projExam,
     github: "https://github.com/Okesh101",
-    live: "#",
+    // live: "#",
+  },
+  {
+    title: "Job Search (In-Progress)",
+    description:
+      "Currently contributing to the backend infrastructure of this site that helps developers find jobs online.",
+    tech: ["React", "JavaScript", "C++", "Crow", "Sqlite3"],
+    image: projJob,
+    github: "https://github.com/Okesh101",
+    // live: "#",
+  },
+  {
+    title: "Face Recognition Login System (In-Progress)",
+    description:
+      "A project that uses facial scanning for sign-up and sign-in as a biometric authentication system",
+    tech: ["React", "TypeScript", "OpenCV", "C++", "Crow", "JSON"],
+    image: projFace,
+    github: "https://github.com/Okesh101",
+    // live: "#",
   },
 ];
 
