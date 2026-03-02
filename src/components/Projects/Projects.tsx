@@ -37,19 +37,19 @@ const projects: Project[] = [
     hackathon_link:
       "https://devpost.com/software/medintel-nyo2l9?ref_content=my-projects-tab&ref_feature=my_projects",
   },
-  {
-    title: "Forge",
-    stack: "Backend",
-    description:
-      "Built the backend infrastructure for this AI agent powered by Gemini3 that designs a skill-building practice plan, observes performance over time, detects stagnation or growth, and rewrites the practice loop at intervals autonomously.",
-    tech: ["Python", "Flask", "Gemini3 API", "APScheduler", "JSON"],
-    image: projForge,
-    github: "https://github.com/Okesh101/Forge",
-    live: "https://forge2ai.vercel.app/",
-    hackathon: "Google Gemini3 Hackathon 2026",
-    hackathon_link:
-      "https://devpost.com/software/gemini-api-app?ref_content=my-projects-tab&ref_feature=my_projects",
-  },
+  // {
+  //   title: "Forge",
+  //   stack: "Backend",
+  //   description:
+  //     "Built the backend infrastructure for this AI agent powered by Gemini3 that designs a skill-building practice plan, observes performance over time, detects stagnation or growth, and rewrites the practice loop at intervals autonomously.",
+  //   tech: ["Python", "Flask", "Gemini3 API", "APScheduler", "JSON"],
+  //   image: projForge,
+  //   github: "https://github.com/Okesh101/Forge",
+  //   live: "https://forge2ai.vercel.app/",
+  //   hackathon: "Google Gemini3 Hackathon 2026",
+  //   hackathon_link:
+  //     "https://devpost.com/software/gemini-api-app?ref_content=my-projects-tab&ref_feature=my_projects",
+  // },
   {
     title: "GAI Debate",
     stack: "Full-Stack",
