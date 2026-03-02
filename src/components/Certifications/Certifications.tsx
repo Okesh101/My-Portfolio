@@ -52,7 +52,7 @@ export default function Certifications() {
   }, []);
 
   // Logic: The last index is the total count minus the integer part of cards visible
-  const maxIndex = Math.max(0, certs.length - Math.floor(cardsToShow));
+  // const maxIndex = Math.max(0, certs.length - Math.floor(cardsToShow));
 
   const handleNext = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, certs.length - cardsToShow));
