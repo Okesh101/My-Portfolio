@@ -1,0 +1,124 @@
+.cert-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px; /* MATCHES YOUR PROJECT GRID */
+  margin: 2rem auto 0; /* Centers the wrapper */
+}
+
+/* Ensure the section itself has the same padding as your Projects section */
+.certifications {
+  padding: 50px 60px; /* MATCHES .projects PADDING */
+}
+
+.cert-slider-container {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.cert-track {
+  display: flex;
+  /* Gap must match the calc in cert-card min-width */
+  gap: 20px; 
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cert-card {
+  /* On Desktop (2.5 cards): 100% / 2.5 = 40%. 
+     Subtracting a bit of the gap ensures the .5 card is visible. */
+  min-width: calc(40% - 16px); 
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Floating Buttons */
+.nav-btn {
+  position: absolute;
+  top: 40%; /* Adjust based on where your image height ends */
+  z-index: 20;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: var(--accent);
+  transform: scale(1.1) translateY(-50%); /* Keeps it centered while growing */
+}
+
+.nav-btn.prev { left: -24px; transform: translateY(-50%); }
+.nav-btn.next { right: -24px; transform: translateY(-50%); }
+
+.nav-btn.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none; /* Prevents any clicks */
+}
+
+.cert-img-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cert-info { padding: 15px; }
+
+.cert-issuer {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--accent); /* Or var(--muted) if you want it more subtle */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cert-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.cert-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.cert-info h3 {
+  font-size: 1.1rem;
+  margin: 0 0 12px 0; /* Give it some space from the meta row */
+  line-height: 1.2;
+}
+
+.cert-stack-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+/* Hide buttons on mobile if they block the content */
+@media (max-width: 768px) {
+  .cert-card {
+    /* On Mobile (1.2 cards): 100% / 1.2 = 83.33% */
+    min-width: calc(83.33% - 15px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-btn.prev { left: 10px; }
+  .nav-btn.next { right: 10px; }
+  .certifications { padding: 50px 5%; } /* Match your main.css section padding */
+}

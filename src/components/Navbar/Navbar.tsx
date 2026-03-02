@@ -51,6 +51,12 @@ export default function Navbar() {
           <a className={active === "projects" ? "active" : ""} href="#projects">
             Projects
           </a>
+          <a
+            className={active === "certifications" ? "active" : ""}
+            href="#certifications"
+          >
+            Certifications
+          </a>
           <a className={active === "contact" ? "active" : ""} href="#contact">
             Contact
           </a>

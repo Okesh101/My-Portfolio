@@ -4,11 +4,35 @@ import {
   FaEnvelope,
   FaPhone,
   FaGithub,
-  FaLinkedin,
   FaWhatsapp,
 } from "react-icons/fa";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const PUBLIC_KEY = import.meta.env.VITE_EMAIL_KEY;
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm("service_kgyicjd", "template_goru7jm", form.current, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          alert("Successfully sent! Thank you for contacting us.");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert("Failed to send message.");
+        },
+      );
+  };
+
   return (
     <section id="contact" className="contact">
       <h2>Contact</h2>
@@ -20,16 +44,10 @@ export default function Contact() {
             Interested in working together? Send me a message
           </p>
 
-          <form
-            className="contact-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Successfully sent! Thank you for contacting us.");
-            }}
-          >
-            <input placeholder="Your name" required />
-            <input placeholder="Email" type="email" required />
-            <textarea placeholder="Message" rows={6} required />
+          <form ref={form} className="contact-form" onSubmit={sendEmail}>
+            <input placeholder="Your name" name="name" required />
+            <input placeholder="Email" type="email" name="email" required />
+            <textarea placeholder="Message" name="title" rows={6} required />
 
             <button className="send">Send Message →</button>
           </form>
@@ -62,13 +80,6 @@ export default function Contact() {
               >
                 <FaGithub />
               </a>
-              {/* <a
-                href="https://linkedin.com/"
-                target="_blank"
-                className="linkedin"
-              >
-                <FaLinkedin />
-              </a> */}
               <a
                 href="https://wa.me/2348144152544?text=Hello%20Goodluck%2C%20I%27m%20interested%20in%20working%20with%20you"
                 target="_blank"

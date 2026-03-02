@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import "./Hero.css";
 import profileImg from "../../assets/me.jpg";
-import { FaGithub, FaLinkedin, FaBehance, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaWhatsapp } from "react-icons/fa";
 
 const roles = [
   "C++ Developer",
-  "Graphics Designer",
   "Junior Backend Developer",
-  "Cybersecurity Enthusiast",
+  "Graphics Designer",
   "Problem Solver",
   "Creative Builder",
 ];
@@ -58,14 +57,15 @@ export default function Hero() {
 
           <p className="lead">
             Passionate about solving problems, writing clean and maintainable
-            code, experimenting with C++ backend engineering and crafting visual
-            ideas.
+            code, experimenting with C++, Python and C# backend engineering and
+            crafting visual ideas.
           </p>
 
           <div className="tags">
             <span>C++</span>
-            <span>React</span>
             <span>Python</span>
+            <span>C#</span>
+            <span>React</span>
             <span>Backend Logic</span>
             <span>Sqlite3</span>
           </div>
@@ -93,10 +93,6 @@ export default function Hero() {
             >
               <FaWhatsapp />
             </a>
-            {/* <a href="https://behance.net/" target="_blank" rel="noreferrer">
-              <FaBehance />
-            </a> */}
-            {/* <a href="/Goodluck-CV.pdf" download><FaDownload /></a> */}
           </div>
         </div>
 
