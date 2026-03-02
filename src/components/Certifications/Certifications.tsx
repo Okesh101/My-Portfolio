@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./Certifications.css";
-import certIntro from "../../assets/cert_introCsharp.jpg";
-import certInterm from "../../assets/cert_intermCsharp.jpg";
+import certIntroCsharp from "../../assets/cert_introCsharp.jpg";
+import certIntermCsharp from "../../assets/cert_intermCsharp.jpg";
+import certGetConnect from "../../assets/cert_getConnected.jpg";
 
 interface Certificate {
   title: string;
@@ -18,14 +19,21 @@ const certs: Certificate[] = [
     issuer: "Sololearn",
     date: "Feb 2026",
     stack: ["C#"],
-    img: certIntro,
+    img: certIntroCsharp,
   },
   {
     title: "C# Intermediate",
     issuer: "Sololearn",
     date: "Feb 2026",
     stack: ["C#"],
-    img: certInterm,
+    img: certIntermCsharp,
+  },
+  {
+    title: "Get Connected",
+    issuer: "Cisco NetAcademy",
+    date: "Jun 2023",
+    stack: ["Networking", "CyberSecurity"],
+    img: certGetConnect,
   },
 ];
 

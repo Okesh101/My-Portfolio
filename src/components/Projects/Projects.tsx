@@ -82,7 +82,7 @@ const projects: Project[] = [
     stack: "Frontend",
     description:
       "Personal portfolio built with Vite, TypeScript and custom UI engineering.",
-    tech: ["React", "TypeScript", "CSS"],
+    tech: ["React", "TypeScript", "CSS", "EmailJS"],
     image: projPortfolio,
     github: "https://github.com/Okesh101/My-Portfolio",
     live: "https://Okesh101.github.io/My-Portfolio/",

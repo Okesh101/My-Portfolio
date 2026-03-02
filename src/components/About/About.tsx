@@ -43,12 +43,14 @@ export default function About() {
             <h3>What I Work With</h3>
             <div className="skill-badges">
               <span>C++</span>
+              <span>Python</span>
+              <span>Flask</span>
+              <span>C#</span>
+              <span>Sqlite3</span>
+              <span>Crow Framework</span>
               <span>React</span>
               <span>TypeScript</span>
               <span>Custom CSS</span>
-              <span>Flask</span>
-              <span>Crow Framework</span>
-              <span>Sqlite3</span>
             </div>
           </div>
         </div>
