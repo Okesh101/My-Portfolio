@@ -11,27 +11,28 @@ export default function About() {
 
         <div className="about-text">
           <p>
-            Hi, I'm <strong>Goodluck</strong> — a passionate{" "}
-            <span className="highlight">C++ programmer</span> who loves solving
-            problems and building things that actually work.
+            Hi, I'm <strong>Goodluck</strong> — a{" "}
+            <span className="highlight">backend-focused</span> software
+            developer who enjoys building the systems that power modern
+            applications.
           </p>
 
           <p>
-            I enjoy working with <strong>modern, efficient technologies</strong>
-            , whether I'm crafting web applications in TypeScript or solving
-            complex problems with the speed and precision of C++.
+            I specialize in designing backend services, APIs, and server-side
+            logic using Python (Flask) and C++. I enjoy solving complex problems
+            involving authentication, data processing, and communication between
+            systems.
           </p>
 
           <p>
-            I build software using a diverse stack, ranging from performance
-            logic in C++ to modern web interfaces with React and TypeScript. I
-            use Crow, Flask and SQLite3 for lightweight services.
+            My work focuses on building reliable backend architectures — from
+            designing API endpoints and managing databases to structuring
+            applications that scale and remain maintainable.
           </p>
 
           <p>
-            My technical interests span the full spectrum of modern engineering:
-            from robotics and cybersecurity to intelligent systems (AI/ML) and
-            the creation of intuitive, user-centric software.
+            I enjoy working close to the core logic of software, where
+            performance, system design, and clean architecture matter most.
           </p>
 
           <p>
@@ -47,10 +48,8 @@ export default function About() {
               <span>Flask</span>
               <span>C#</span>
               <span>Sqlite3</span>
+              <span>SQL</span>
               <span>Crow Framework</span>
-              <span>React</span>
-              <span>TypeScript</span>
-              <span>Custom CSS</span>
             </div>
           </div>
         </div>

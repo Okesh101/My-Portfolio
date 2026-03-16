@@ -103,8 +103,8 @@ export default function Certifications() {
                   <div className="cert-meta">
                     <span className="cert-date">{c.date}</span>
                     <div className="cert-tags">
-                      {c.stack.map((cm) => (
-                        <span className="cert-stack-tag">{cm}</span>
+                      {c.stack.map((cm, idx) => (
+                        <span key={idx} className="cert-stack-tag">{cm}</span>
                       ))}
                     </div>
                   </div>

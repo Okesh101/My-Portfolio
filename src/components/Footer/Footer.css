@@ -42,6 +42,27 @@
   color: var(--accent);
 }
 
+/* .icons a.github:hover {
+  color: #0FBF3E; 
+} */
+
+.icons a.x:hover {
+  color: #000000
+}
+
+.icons a.instagram:hover svg {
+  fill: url(#instagram-gradient); /* This pulls from the SVG ID above */
+  color: transparent; /* Optional: hides the base color so gradient shines through */
+}
+
+.icons a.whatsapp:hover {
+  color: #25D366; /* official whatsapp green */
+}
+
+.icons a.devto:hover {
+  color: #3B49DF; /* Official DEV.to Royal Blue */
+}
+
 .copy {
   color: var(--muted);
   font-size: 13px;

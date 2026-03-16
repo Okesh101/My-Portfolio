@@ -109,6 +109,23 @@
   color: #fff;
 }
 
+.socials a.x:hover {
+  color: #000000
+}
+
+.socials a.instagram:hover svg {
+  fill: url(#instagram-gradient); /* This pulls from the SVG ID above */
+  color: transparent; /* Optional: hides the base color so gradient shines through */
+}
+
+.socials a.whatsapp:hover {
+  color: #25D366; /* official whatsapp green */
+}
+
+.socials a.devto:hover {
+  color: #3B49DF; /* Official DEV.to Royal Blue */
+}
+
 .card {
   width: 300px;
   padding: 22px;

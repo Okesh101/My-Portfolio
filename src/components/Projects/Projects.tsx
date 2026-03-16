@@ -9,7 +9,7 @@ import projDebate from "../../assets/proj_debate.png";
 import projFace from "../../assets/proj_face_auth.png";
 import projJob from "../../assets/proj_job.png";
 import projHealthShield from "../../assets/proj_health_shield.png";
-import projForge from "../../assets/proj_forge.png";
+// import projForge from "../../assets/proj_forge.png";
 
 type Project = {
   title: string;

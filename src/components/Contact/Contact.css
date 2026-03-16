@@ -120,6 +120,10 @@ textarea:focus {
   color: var(--accent);
 }
 
+.socials a.instagram {
+  transition: all 0.3s ease;
+}
+
 .socials a.whatsapp {
   font-size: 26px;
 }
@@ -128,8 +132,17 @@ textarea:focus {
   color: #4078c0; /* official github blue */
 }
 
-.socials a.linkedin:hover {
+/* .socials a.linkedin:hover {
   color: #0A66C2; /* official linkedin blue */
+/* } */
+
+.socials a.x:hover {
+  color: #000000
+}
+
+.socials a.instagram:hover svg {
+  fill: url(#instagram-gradient); /* This pulls from the SVG ID above */
+  color: transparent; /* Optional: hides the base color so gradient shines through */
 }
 
 .socials a.whatsapp:hover {

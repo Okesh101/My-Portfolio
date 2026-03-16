@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import "./Hero.css";
 import profileImg from "../../assets/me.jpg";
-import { FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaDev, FaXTwitter } from "react-icons/fa6";
 
 const roles = [
-  "C++ Developer",
-  "Junior Backend Developer",
-  "Graphics Designer",
-  "Problem Solver",
-  "Creative Builder",
+  // "C++ Developer",
+  "Backend Developer",
+  "API Developer",
+  "Systems Programmer",
+  "Server-Side Engineer",
+  "C++ Backend Engineer",
+  "Python Backend Engineer"
 ];
 
 export default function Hero() {
@@ -56,17 +59,18 @@ export default function Hero() {
           </p>
 
           <p className="lead">
-            Passionate about solving problems, writing clean and maintainable
-            code, experimenting with C++, Python and C# backend engineering and
-            crafting visual ideas.
+            Backend-focused developer building REST APIs, authentication
+            systems, and server-side applications using Python (Flask) and C++.
           </p>
 
           <div className="tags">
-            <span>C++</span>
             <span>Python</span>
+            <span>C++</span>
+            <span>Flask</span>
             <span>C#</span>
-            <span>React</span>
-            <span>Backend Logic</span>
+            <span>Crow</span>
+            <span>REST APIs</span>
+            <span>Backend Architecture</span>
             <span>Sqlite3</span>
           </div>
 
@@ -79,6 +83,20 @@ export default function Hero() {
             </a>
           </div>
 
+          <svg width="0" height="0" style={{ position: "absolute" }}>
+            <linearGradient
+              id="instagram-gradient"
+              x1="100%"
+              y1="100%"
+              x2="0%"
+              y2="0%"
+            >
+              <stop stopColor="#f9ce34" offset="0%" />
+              <stop stopColor="#ee2a7b" offset="50%" />
+              <stop stopColor="#6228d7" offset="100%" />
+            </linearGradient>
+          </svg>
+
           <div className="socials">
             <a
               href="https://github.com/Okesh101"
@@ -87,9 +105,27 @@ export default function Hero() {
             >
               <FaGithub />
             </a>
+            <a href="https://x.com/goodluckdev" target="_blank" className="x">
+              <FaXTwitter />
+            </a>
+            <a
+              href="https://instagram.com/goodluck_dev"
+              target="_blank"
+              className="instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://dev.to/goodluckdev"
+              target="_blank"
+              className="devto"
+            >
+              <FaDev />
+            </a>
             <a
               href="https://wa.me/2348144152544?text=Hello%20Goodluck"
               target="_blank"
+              className="whatsapp"
             >
               <FaWhatsapp />
             </a>
@@ -101,7 +137,7 @@ export default function Hero() {
           <img className="profile-img" src={profileImg} alt="Goodluck" />
           <div className="meta">
             <p>
-              <strong>C++</strong> Developer
+              <strong>Backend</strong> Developer
             </p>
             <p>Based in Lagos, Nigeria</p>
           </div>
