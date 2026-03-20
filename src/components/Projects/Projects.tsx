@@ -65,7 +65,7 @@ const projects: Project[] = [
     ],
     image: projDebate,
     github: "https://github.com/Okesh101",
-    live: "https://gai-debate.onrender.com/",
+    // live: "https://gai-debate.onrender.com/",
   },
   {
     title: "Password Strength Checker",
@@ -75,7 +75,7 @@ const projects: Project[] = [
     tech: ["HTML", "CSS", "JavaScript", "C++", "Crow"],
     image: projPassword,
     github: "https://github.com/Okesh101",
-    live: "https://ps-checker.onrender.com/",
+    // live: "https://ps-checker.onrender.com/",
   },
   {
     title: "Portfolio",
