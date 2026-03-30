@@ -9,6 +9,7 @@ import projDebate from "../../assets/proj_debate.png";
 import projFace from "../../assets/proj_face_auth.png";
 import projJob from "../../assets/proj_job.png";
 import projHealthShield from "../../assets/proj_health_shield.png";
+// import projFarmDrive from "../../assets/proj_farmdrive.png";
 // import projForge from "../../assets/proj_forge.png";
 
 type Project = {
@@ -24,6 +25,18 @@ type Project = {
 };
 
 const projects: Project[] = [
+//   {
+//     title: "FarmDrive",
+//     stack: "Backend",
+//     description:
+//       "Engineered the real-time backend for a farm-to-market logistics platform, connecting farmers with drivers. Built a low-latency tracking system for live GPS sync and data persistence. Collaborated with frontend to integrate a Next.js/Leaflet interface with a RESTful API, enabling a seamless delivery flow from bidding to payment.",
+//     tech: ["Python", "Flask", "Sqlite3", "Groq API", "Flask-SocketIO"],
+//     image: projFarmDrive,
+//     github: "https://github.com/Marvel123g/FarmDrive",
+//     live: "https://farmdrive.vercel.app/",
+//     hackathon: "Enyata Community Buildathon 2026",
+//     hackathon_link: "https://buildathon.enyata.com/",
+//   },
   {
     title: "Health Shield AI",
     stack: "Backend",
