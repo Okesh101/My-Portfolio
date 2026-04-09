@@ -47,8 +47,9 @@ export default function About() {
               <span>Python</span>
               <span>Flask</span>
               <span>C#</span>
+              <span>PostgreSQL</span>
               <span>Sqlite3</span>
-              <span>SQL</span>
+              {/* <span>SQL</span> */}
               <span>Crow Framework</span>
             </div>
           </div>

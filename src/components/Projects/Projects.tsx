@@ -6,11 +6,11 @@ import projExam from "../../assets/proj_exam.png";
 import projPortfolio from "../../assets/proj_portfolio.png";
 import projPassword from "../../assets/proj_ps-checker.png";
 import projDebate from "../../assets/proj_debate.png";
-import projFace from "../../assets/proj_face_auth.png";
+// import projFace from "../../assets/proj_face_auth.png";
 import projJob from "../../assets/proj_job.png";
 import projHealthShield from "../../assets/proj_health_shield.png";
-// import projFarmDrive from "../../assets/proj_farmdrive.png";
-// import projForge from "../../assets/proj_forge.png";
+import projFarmDrive from "../../assets/proj_farmdrive.png";
+import projForge from "../../assets/proj_forge.png";
 
 type Project = {
   title: string;
@@ -25,18 +25,18 @@ type Project = {
 };
 
 const projects: Project[] = [
-//   {
-//     title: "FarmDrive",
-//     stack: "Backend",
-//     description:
-//       "Engineered the real-time backend for a farm-to-market logistics platform, connecting farmers with drivers. Built a low-latency tracking system for live GPS sync and data persistence. Collaborated with frontend to integrate a Next.js/Leaflet interface with a RESTful API, enabling a seamless delivery flow from bidding to payment.",
-//     tech: ["Python", "Flask", "Sqlite3", "Groq API", "Flask-SocketIO"],
-//     image: projFarmDrive,
-//     github: "https://github.com/Marvel123g/FarmDrive",
-//     live: "https://farmdrive.vercel.app/",
-//     hackathon: "Enyata Community Buildathon 2026",
-//     hackathon_link: "https://buildathon.enyata.com/",
-//   },
+  {
+    title: "FarmDrive",
+    stack: "Backend",
+    description:
+      "Engineered the real-time backend for a farm-to-market logistics platform, connecting farmers with drivers. Built a low-latency tracking system for live GPS sync and data persistence. Collaborated with frontend to integrate a React-Leaflet interface with a RESTful API, enabling a seamless delivery flow from bidding to payment. Implemented AI auto-matching drivers to farmers.",
+    tech: ["Python", "Flask", "Sqlite3", "Groq API", "Flask-SocketIO"],
+    image: projFarmDrive,
+    github: "https://github.com/Marvel123g/FarmDrive",
+    live: "https://farmdrive.vercel.app/",
+    hackathon: "Enyata Community Buildathon 2026",
+    hackathon_link: "https://buildathon.enyata.com/",
+  },
   {
     title: "Health Shield AI",
     stack: "Backend",
@@ -50,19 +50,19 @@ const projects: Project[] = [
     hackathon_link:
       "https://devpost.com/software/medintel-nyo2l9?ref_content=my-projects-tab&ref_feature=my_projects",
   },
-  // {
-  //   title: "Forge",
-  //   stack: "Backend",
-  //   description:
-  //     "Built the backend infrastructure for this AI agent powered by Gemini3 that designs a skill-building practice plan, observes performance over time, detects stagnation or growth, and rewrites the practice loop at intervals autonomously.",
-  //   tech: ["Python", "Flask", "Gemini3 API", "APScheduler", "JSON"],
-  //   image: projForge,
-  //   github: "https://github.com/Okesh101/Forge",
-  //   live: "https://forge2ai.vercel.app/",
-  //   hackathon: "Google Gemini3 Hackathon 2026",
-  //   hackathon_link:
-  //     "https://devpost.com/software/gemini-api-app?ref_content=my-projects-tab&ref_feature=my_projects",
-  // },
+  {
+    title: "Forge",
+    stack: "Backend",
+    description:
+      "Built the backend infrastructure for this AI agent powered by Gemini3 that designs a skill-building practice plan, observes performance over time, detects stagnation or growth, and rewrites the practice loop at intervals autonomously.",
+    tech: ["Python", "Flask", "Gemini3 API", "APScheduler", "JSON"],
+    image: projForge,
+    github: "https://github.com/Okesh101/Forge",
+    live: "https://forge2ai.vercel.app/",
+    hackathon: "Google Gemini3 Hackathon 2026",
+    hackathon_link:
+      "https://devpost.com/software/gemini-api-app?ref_content=my-projects-tab&ref_feature=my_projects",
+  },
   {
     title: "GAI Debate",
     stack: "Full-Stack",
@@ -77,7 +77,7 @@ const projects: Project[] = [
       "LangChain",
     ],
     image: projDebate,
-    github: "https://github.com/Okesh101",
+    github: "https://github.com/Okesh101/gai-debate-python-api",
     // live: "https://gai-debate.onrender.com/",
   },
   {
@@ -87,7 +87,7 @@ const projects: Project[] = [
       "A tool to check the strength of passwords using various algorithms and known breached lists.",
     tech: ["HTML", "CSS", "JavaScript", "C++", "Crow"],
     image: projPassword,
-    github: "https://github.com/Okesh101",
+    github: "https://github.com/Okesh101/psChecker",
     // live: "https://ps-checker.onrender.com/",
   },
   {
@@ -116,22 +116,22 @@ const projects: Project[] = [
     tech: ["React", "JavaScript", "C++", "Crow", "Sqlite3"],
     image: projJob,
   },
-  {
-    title: "Face Recognition Login System (In-Progress)",
-    stack: "Full-Stack",
-    description:
-      "A project that uses facial scanning for sign-up and sign-in as a biometric authentication system",
-    tech: [
-      "React",
-      "TypeScript",
-      "OpenCV",
-      "C++",
-      "Crow",
-      "HaarCascade",
-      "JSON",
-    ],
-    image: projFace,
-  },
+  // {
+  //   title: "Face Recognition Login System (In-Progress)",
+  //   stack: "Full-Stack",
+  //   description:
+  //     "A project that uses facial scanning for sign-up and sign-in as a biometric authentication system",
+  //   tech: [
+  //     "React",
+  //     "TypeScript",
+  //     "OpenCV",
+  //     "C++",
+  //     "Crow",
+  //     "HaarCascade",
+  //     "JSON",
+  //   ],
+  //   image: projFace,
+  // },
 ];
 
 export default function Projects() {

@@ -68,10 +68,11 @@ export default function Hero() {
             <span>C++</span>
             <span>Flask</span>
             <span>C#</span>
+            <span>PostgreSQL</span>
+            <span>Sqlite3</span>
             <span>Crow</span>
             <span>REST APIs</span>
-            <span>Backend Architecture</span>
-            <span>Sqlite3</span>
+            {/* <span>Backend Architecture</span> */}
           </div>
 
           <div className="actions">
