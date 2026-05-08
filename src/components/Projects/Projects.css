@@ -22,7 +22,14 @@
 .project-card {
   background: var(--panel);
   border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 14px;
+  /* Top corners (Square) */
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+
+  /* Bottom corners (Rounded) */
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+
   overflow: hidden;
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -43,6 +50,8 @@
 /* Body */
 .project-body {
   padding: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-body h3 {
@@ -151,6 +160,31 @@
   font-size: 12px;
   font-style: italic;
   padding-top: 10px;
+}
+
+.proj-date-wrap {
+  /* margin-top: 10px; */
+  position: relative;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* gap: 25px; */
+}
+
+.project-date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* display: flex; */
+  /* gap: 10px; */
+}
+
+.proj-date-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(14, 165, 233, 0.3);
 }
 
 .project-hackathon a {

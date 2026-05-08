@@ -11,6 +11,7 @@ import projJob from "../../assets/proj_job.png";
 import projHealthShield from "../../assets/proj_health_shield.png";
 import projFarmDrive from "../../assets/proj_farmdrive.png";
 import projForge from "../../assets/proj_forge.png";
+import projLucidify from "../../assets/proj_lucidify.png"
 
 type Project = {
   title: string;
@@ -21,10 +22,23 @@ type Project = {
   github?: string;
   live?: string;
   hackathon?: string;
+  range?: string;
   hackathon_link?: string;
 };
 
 const projects: Project[] = [
+  {
+    title: "Lucidify",
+    stack: "Backend",
+    description:
+      "Built the backend for Lucidify — a Flask-powered engine that automates CAC compliance for Nigerian businesses. From custom PDF generation to automated reminder scheduling, I engineered the logic that keeps small businesses penalty-free.",
+    tech: ["Python", "Flask", "Sqlite3", "Groq API", "Llama3 LLM", "PyPDF"],
+    image: projLucidify,
+    github: "https://github.com/Okesh101/Lucidify",
+    live: "https://lucidify2.netlify.app/",
+    hackathon: "Code4Justice Hackathon",
+    range: "Apr - May 2026",
+  },
   {
     title: "FarmDrive",
     stack: "Backend",
@@ -33,8 +47,9 @@ const projects: Project[] = [
     tech: ["Python", "Flask", "Sqlite3", "Groq API", "Flask-SocketIO"],
     image: projFarmDrive,
     github: "https://github.com/Marvel123g/FarmDrive",
-    live: "https://farmdrive.vercel.app/",
-    hackathon: "Enyata Community Buildathon 2026",
+    live: "https://farmdrive.netlify.app/",
+    hackathon: "Enyata Community Buildathon",
+    range: "Mar - Apr 2026",
     hackathon_link: "https://buildathon.enyata.com/",
   },
   {
@@ -46,7 +61,8 @@ const projects: Project[] = [
     image: projHealthShield,
     github: "https://github.com/Okesh101/Health-Shield",
     live: "https://health-shield-black.vercel.app/",
-    hackathon: "Cavista Technologies Hackathon 2026",
+    hackathon: "Cavista Technologies Hackathon",
+    range: "Feb 2026",
     hackathon_link:
       "https://devpost.com/software/medintel-nyo2l9?ref_content=my-projects-tab&ref_feature=my_projects",
   },
@@ -59,7 +75,8 @@ const projects: Project[] = [
     image: projForge,
     github: "https://github.com/Okesh101/Forge",
     live: "https://forge2ai.vercel.app/",
-    hackathon: "Google Gemini3 Hackathon 2026",
+    hackathon: "Google Gemini3 Hackathon",
+    range: "Dec - Feb 2026",
     hackathon_link:
       "https://devpost.com/software/gemini-api-app?ref_content=my-projects-tab&ref_feature=my_projects",
   },
@@ -98,7 +115,7 @@ const projects: Project[] = [
     tech: ["React", "TypeScript", "CSS", "EmailJS"],
     image: projPortfolio,
     github: "https://github.com/Okesh101/My-Portfolio",
-    live: "https://Okesh101.github.io/My-Portfolio/",
+    live: "https://okesh101.github.io/My-Portfolio/",
   },
   {
     title: "Exam Portal",
@@ -187,6 +204,11 @@ export default function Projects() {
                     {p.hackathon}
                   </a>
                 )}
+              </div>
+              <div className="proj-date-wrap">
+                <div className="project-date">
+                  {p.range && <span className="proj-date-tag">{p.range}</span>}
+                </div>
               </div>
             </div>
           </article>

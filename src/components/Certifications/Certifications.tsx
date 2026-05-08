@@ -4,6 +4,8 @@ import "./Certifications.css";
 import certIntroCsharp from "../../assets/cert_introCsharp.jpg";
 import certIntermCsharp from "../../assets/cert_intermCsharp.jpg";
 import certGetConnect from "../../assets/cert_getConnected.jpg";
+import certCyberSec from "../../assets/cert_cyberSecurity.jpg";
+import certEnyata from "../../assets/cert_enyataHack.jpg";
 
 interface Certificate {
   title: string;
@@ -15,11 +17,18 @@ interface Certificate {
 
 const certs: Certificate[] = [
   {
-    title: "Introduction to C#",
-    issuer: "Sololearn",
-    date: "Feb 2026",
-    stack: ["C#"],
-    img: certIntroCsharp,
+    title: "Enyata Hackathon Participant",
+    issuer: "Interswitch & Enyata",
+    date: "Mar - Apr 2026",
+    stack: ["Hackathon", "Problem Solving"],
+    img: certEnyata,
+  },
+  {
+    title: "Cybersecurity Essentials",
+    issuer: "JGIYC Digital Economy Training Academy",
+    date: "Mar 2026",
+    stack: ["CyberSecurity", "Kali Linux"],
+    img: certCyberSec,
   },
   {
     title: "C# Intermediate",
@@ -27,6 +36,13 @@ const certs: Certificate[] = [
     date: "Feb 2026",
     stack: ["C#"],
     img: certIntermCsharp,
+  },
+  {
+    title: "Introduction to C#",
+    issuer: "Sololearn",
+    date: "Feb 2026",
+    stack: ["C#"],
+    img: certIntroCsharp,
   },
   {
     title: "Get Connected",
