@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Hero.css";
-import profileImg from "../../assets/me.jpg";
+import profileImg from "../../assets/me.png";
 import { FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FaDev, FaXTwitter } from "react-icons/fa6";
 

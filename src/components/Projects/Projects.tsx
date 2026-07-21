@@ -3,15 +3,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 // Example images — replace with your own
 import projExam from "../../assets/proj_exam.png";
-import projPortfolio from "../../assets/proj_portfolio.png";
+// import projPortfolio from "../../assets/proj_portfolio.png";
 import projPassword from "../../assets/proj_ps-checker.png";
 import projDebate from "../../assets/proj_debate.png";
 // import projFace from "../../assets/proj_face_auth.png";
-import projJob from "../../assets/proj_job.png";
+// import projJob from "../../assets/proj_job.png";
 import projHealthShield from "../../assets/proj_health_shield.png";
 import projFarmDrive from "../../assets/proj_farmdrive.png";
 import projForge from "../../assets/proj_forge.png";
-import projLucidify from "../../assets/proj_lucidify.png"
+import projLucidify from "../../assets/proj_lucidify.png";
 
 type Project = {
   title: string;
@@ -35,7 +35,7 @@ const projects: Project[] = [
     tech: ["Python", "Flask", "Sqlite3", "Groq API", "Llama3 LLM", "PyPDF"],
     image: projLucidify,
     github: "https://github.com/Okesh101/Lucidify",
-    live: "https://lucidify2.netlify.app/",
+    // live: "https://lucidify2.netlify.app/",
     hackathon: "Code4Justice Hackathon",
     range: "Apr - May 2026",
   },
@@ -43,7 +43,7 @@ const projects: Project[] = [
     title: "FarmDrive",
     stack: "Backend",
     description:
-      "Engineered the real-time backend for a farm-to-market logistics platform, connecting farmers with drivers. Built a low-latency tracking system for live GPS sync and data persistence. Collaborated with frontend to integrate a React-Leaflet interface with a RESTful API, enabling a seamless delivery flow from bidding to payment. Implemented AI auto-matching drivers to farmers.",
+      "Engineered the real-time backend for a farm-to-market logistics platform, connecting farmers with drivers using GPS for tracking and AI for smart matching.",
     tech: ["Python", "Flask", "Sqlite3", "Groq API", "Flask-SocketIO"],
     image: projFarmDrive,
     github: "https://github.com/Marvel123g/FarmDrive",
@@ -56,11 +56,11 @@ const projects: Project[] = [
     title: "Health Shield AI",
     stack: "Backend",
     description:
-      "I developed the backend infrastructure for Health Shield AI, a multi-platform health assistant application that was trained on over 18+ diseases and their symptoms for accurate predictions of potential health conditions based on user symptoms and medical history.",
+      "Developed the backend infrastructure for this health assistant application that was trained on over 18+ diseases and their symptoms for accurate predictions of potential health conditions based on user symptoms and medical history.",
     tech: ["Python", "Flask", "Sqlite3", "Whisper API", "Llama3 LLM"],
     image: projHealthShield,
     github: "https://github.com/Okesh101/Health-Shield",
-    live: "https://health-shield-black.vercel.app/",
+    // live: "https://health-shield-black.vercel.app/",
     hackathon: "Cavista Technologies Hackathon",
     range: "Feb 2026",
     hackathon_link:
@@ -108,16 +108,6 @@ const projects: Project[] = [
     // live: "https://ps-checker.onrender.com/",
   },
   {
-    title: "Portfolio",
-    stack: "Frontend",
-    description:
-      "Personal portfolio built with Vite, TypeScript and custom UI engineering.",
-    tech: ["React", "TypeScript", "CSS", "EmailJS"],
-    image: projPortfolio,
-    github: "https://github.com/Okesh101/My-Portfolio",
-    live: "https://okesh101.github.io/My-Portfolio/",
-  },
-  {
     title: "Exam Portal",
     stack: "Full-Stack",
     description:
@@ -125,30 +115,6 @@ const projects: Project[] = [
     tech: ["React", "TypeScript", "C++", "Crow", "JSON"],
     image: projExam,
   },
-  {
-    title: "Job Search (In-Progress)",
-    stack: "Backend",
-    description:
-      "Currently contributing to the backend infrastructure of this site that helps developers find jobs online.",
-    tech: ["React", "JavaScript", "C++", "Crow", "Sqlite3"],
-    image: projJob,
-  },
-  // {
-  //   title: "Face Recognition Login System (In-Progress)",
-  //   stack: "Full-Stack",
-  //   description:
-  //     "A project that uses facial scanning for sign-up and sign-in as a biometric authentication system",
-  //   tech: [
-  //     "React",
-  //     "TypeScript",
-  //     "OpenCV",
-  //     "C++",
-  //     "Crow",
-  //     "HaarCascade",
-  //     "JSON",
-  //   ],
-  //   image: projFace,
-  // },
 ];
 
 export default function Projects() {
@@ -161,14 +127,14 @@ export default function Projects() {
           <article className="project-card" key={i}>
             {/* Thumbnail */}
             <div className="project-thumb">
-              <img src={p.image} alt={p.title} />
+              <img src={p.image} alt={p.title} loading="lazy" />
             </div>
 
             {/* Text Area */}
             <div className="project-body">
               <div className="title-wrapper">
                 <h3 className="project-title">
-                  {p.title}
+                  <span className="title-text">{p.title}</span>
                   <span className="tag-spacer"></span>
                   <span
                     className={`project-stack ${p.stack === "Backend" ? "tag-backend" : "tag-frontend"}`}
@@ -185,29 +151,43 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="project-links">
-                {p.github && (
-                  <a href={p.github} target="_blank" rel="noreferrer">
-                    <FaGithub />
-                  </a>
-                )}
+              <div className="project-footer">
+                <div className="project-links">
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub"
+                    >
+                      <FaGithub />
+                    </a>
+                  )}
 
-                {p.live && (
-                  <a href={p.live} target="_blank" rel="noreferrer">
-                    <FaExternalLinkAlt />
-                  </a>
-                )}
-              </div>
-              <div className="project-hackathon">
-                {p.hackathon && (
-                  <a href={p.hackathon_link} target="_blank" rel="noreferrer">
-                    {p.hackathon}
-                  </a>
-                )}
-              </div>
-              <div className="proj-date-wrap">
-                <div className="project-date">
-                  {p.range && <span className="proj-date-tag">{p.range}</span>}
+                  {p.live && (
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Live Demo"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  )}
+                </div>
+
+                <div className="project-meta">
+                  {p.hackathon && (
+                    <a
+                      href={p.hackathon_link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hackathon-link"
+                    >
+                      {p.hackathon}
+                    </a>
+                  )}
+                  {p.range && <span className="project-date">{p.range}</span>}
                 </div>
               </div>
             </div>

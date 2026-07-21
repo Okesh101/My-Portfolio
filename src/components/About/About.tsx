@@ -1,5 +1,5 @@
 import "./About.css";
-import profileImg from "../../assets/me.jpg";
+import profileImg from "../../assets/me.png";
 
 export default function About() {
   return (

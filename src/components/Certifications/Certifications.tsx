@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./Certifications.css";
 import certIntroCsharp from "../../assets/cert_introCsharp.jpg";
@@ -56,33 +56,88 @@ const certs: Certificate[] = [
 export default function Certifications() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(2.5);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Update cardsToShow based on screen width
   useEffect(() => {
     const handleResize = () => {
-      setCardsToShow(window.innerWidth <= 768 ? 1.2 : 2.5);
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setCardsToShow(1.1);
+      } else if (width <= 768) {
+        setCardsToShow(1.5);
+      } else if (width <= 1024) {
+        setCardsToShow(2.2);
+      } else {
+        setCardsToShow(2.5);
+      }
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Logic: The last index is the total count minus the integer part of cards visible
-  // const maxIndex = Math.max(0, certs.length - Math.floor(cardsToShow));
+  const maxIndex = Math.max(0, certs.length - Math.floor(cardsToShow));
 
   const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + 1, certs.length - cardsToShow));
+    if (isTransitioning || currentIndex >= maxIndex) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const handlePrev = () => {
+    if (isTransitioning || currentIndex <= 0) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
-  // Calculation for the transform:
-  // If we're near the end, we clamp the value so the last card aligns with the right edge.
   const getTransform = () => {
-    const offset = Math.min(currentIndex, certs.length - cardsToShow);
-    return `translateX(-${offset * (100 / cardsToShow)}%)`;
+    // Calculate how many pixels to slide
+    if (trackRef.current && containerRef.current) {
+      const cardWidth =
+        trackRef.current.children[0]?.getBoundingClientRect().width || 0;
+      const gap = 20; // Match CSS gap
+      const offset = Math.min(currentIndex, maxIndex);
+      return `translateX(-${offset * (cardWidth + gap)}px)`;
+    }
+    return `translateX(-${currentIndex * (100 / cardsToShow)}%)`;
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "ArrowRight") handleNext();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex, isTransitioning]);
+
+  // Touch support
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
   };
 
   return (
@@ -93,25 +148,42 @@ export default function Certifications() {
         <button
           className={`nav-btn prev ${currentIndex <= 0 ? "disabled" : ""}`}
           onClick={handlePrev}
-          disabled={currentIndex <= 0}
+          disabled={currentIndex <= 0 || isTransitioning}
+          aria-label="Previous certifications"
         >
           <FaChevronLeft />
         </button>
 
         <button
-          className={`nav-btn next ${currentIndex >= certs.length - cardsToShow ? "disabled" : ""}`}
+          className={`nav-btn next ${currentIndex >= maxIndex ? "disabled" : ""}`}
           onClick={handleNext}
-          disabled={currentIndex >= certs.length - cardsToShow}
+          disabled={currentIndex >= maxIndex || isTransitioning}
+          aria-label="Next certifications"
         >
           <FaChevronRight />
         </button>
 
-        <div className="cert-slider-container">
-          <div className="cert-track" style={{ transform: getTransform() }}>
+        <div
+          className="cert-slider-container"
+          ref={containerRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div
+            className="cert-track"
+            ref={trackRef}
+            style={{
+              transform: getTransform(),
+              transition: isTransitioning
+                ? "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)"
+                : "none",
+            }}
+          >
             {certs.map((c, i) => (
               <article className="cert-card" key={i}>
                 <div className="cert-img-container">
-                  <img src={c.img} alt={c.title} />
+                  <img src={c.img} alt={c.title} loading="lazy" />
                 </div>
                 <div className="cert-info">
                   <span className="cert-issuer">{c.issuer}</span>
@@ -120,7 +192,9 @@ export default function Certifications() {
                     <span className="cert-date">{c.date}</span>
                     <div className="cert-tags">
                       {c.stack.map((cm, idx) => (
-                        <span key={idx} className="cert-stack-tag">{cm}</span>
+                        <span key={idx} className="cert-stack-tag">
+                          {cm}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -128,6 +202,24 @@ export default function Certifications() {
               </article>
             ))}
           </div>
+        </div>
+
+        {/* Dots indicator */}
+        <div className="cert-dots">
+          {Array.from({ length: maxIndex + 1 }, (_, i) => (
+            <button
+              key={i}
+              className={`dot ${i === currentIndex ? "active" : ""}`}
+              onClick={() => {
+                if (!isTransitioning) {
+                  setIsTransitioning(true);
+                  setCurrentIndex(i);
+                  setTimeout(() => setIsTransitioning(false), 600);
+                }
+              }}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

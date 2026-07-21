@@ -1,99 +1,143 @@
 .projects {
-  padding: 50px 60px;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-family: 'Poppins', sans-serif;
 }
 
-/* Grid Layout */
+/* Grid Layout - Responsive */
 .projects-grid {
-  max-width: 1100px;
-  margin: 0 auto;
   display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+  grid-template-columns: 1fr;
+  padding: 0 10px;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .projects {
+    padding: 50px 60px;
+  }
 }
 
 /* Card Styling */
 .project-card {
   background: var(--panel);
   border: 1px solid rgba(255,255,255,0.05);
-  /* Top corners (Square) */
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-
-  /* Bottom corners (Rounded) */
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
-
   overflow: hidden;
   transition: transform .25s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(2,6,23,0.55);
 }
 
+@media (min-width: 600px) {
+  .project-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
 /* Thumbnail */
+.project-thumb {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  background: #0a0e1a;
+}
+
 .project-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 170px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
 /* Body */
 .project-body {
-  padding: 18px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
-.project-body h3 {
-  margin: 0 0 8px;
-  font-size: 1.15rem;
+@media (min-width: 768px) {
+  .project-body {
+    padding: 20px;
+  }
 }
 
-.title-wrapper h3 {
-  display: block;
-  word-break: keep-all;  /* Prevents breaking words in the middle */
-  overflow-wrap: normal; /* Standard wrapping only at spaces */
-  line-height: 1.3;
+.title-wrapper {
   margin-bottom: 8px;
 }
 
 .project-title {
-  display: block; 
-  line-height: 1.6;
-  margin-bottom: 8px;
-  word-break: keep-all;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.4;
 }
 
-/* This creates the space ONLY when the tag is on the same line */
+.title-text {
+  font-weight: 600;
+}
+
 .tag-spacer {
-  display: inline-block;
-  width: 8px; 
+  display: none;
 }
 
 .project-stack {
-  display: inline-flex;  
-  vertical-align: middle; 
-  margin-left: 0;
-  top: -1px;
-  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 3px 10px;
-  border-radius: 8px;
+  padding: 2px 8px;
+  border-radius: 6px;
   font-weight: 600;
   border: 1px solid;
-  line-height: normal;
+  line-height: 1.4;
   white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .project-stack {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
 }
 
 /* Frontend Style */
@@ -113,25 +157,38 @@
 /* Description */
 .desc {
   color: var(--muted);
-  font-size: .95rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
   line-height: 1.5;
   margin: 0 0 12px;
+  flex: 1;
 }
 
 /* Tech tags */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   margin-bottom: 12px;
 }
 
+@media (min-width: 768px) {
+  .tech-tags {
+    gap: 6px;
+  }
+}
+
 .tech-tags span {
-  font-size: .78rem;
-  padding: 5px 10px;
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
+  padding: 4px 8px;
   background: rgba(255,255,255,0.06);
   border-radius: 6px;
   transition: 0.25s ease;
+}
+
+@media (min-width: 768px) {
+  .tech-tags span {
+    padding: 5px 10px;
+  }
 }
 
 .tech-tags span:hover {
@@ -139,65 +196,145 @@
   color: #081226;
 }
 
+/* Project Footer */
+.project-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (min-width: 480px) {
+  .project-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 /* Links */
 .project-links {
   display: flex;
-  gap: 15px;
-  font-size: 1.2rem;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .project-links {
+    gap: 15px;
+    font-size: 1.2rem;
+  }
 }
 
 .project-links a {
   color: var(--text);
   transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 .project-links a:hover {
   color: var(--accent);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.project-hackathon {
-  font-size: 12px;
+/* Meta info */
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 480px) {
+  .project-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+  }
+}
+
+.hackathon-link {
+  color: #00d2ff;
+  text-decoration: none;
   font-style: italic;
-  padding-top: 10px;
+  transition: 0.25s ease;
+  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
 }
 
-.proj-date-wrap {
-  /* margin-top: 10px; */
-  position: relative;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* gap: 25px; */
+.hackathon-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .project-date {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  /* display: flex; */
-  /* gap: 10px; */
-}
-
-.proj-date-tag {
-  font-size: 0.7rem;
-  padding: 2px 8px;
+  font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+  padding: 2px 6px;
   border-radius: 4px;
   background: rgba(14, 165, 233, 0.1);
   color: var(--accent);
   border: 1px solid rgba(14, 165, 233, 0.3);
+  white-space: nowrap;
+  display: inline-block;
 }
 
-.project-hackathon a {
-  color: #00d2ff;
-}
-
-/* If you want the title to stay on one line and the tag to move below it on small screens */
-@media (max-width: 429px) {
-  .title-wrapper h3 {
-    align-items: flex-start;
-    gap: 5px;
+@media (min-width: 768px) {
+  .project-date {
+    padding: 2px 8px;
   }
-  .project-stack {
-    margin-left: 0; /* Reset that margin we added earlier */
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .projects {
+    padding: 20px 10px;
+  }
+  
+  .project-body {
+    padding: 12px;
+  }
+  
+  .tech-tags span {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+  
+  .project-links {
+    gap: 8px;
+    font-size: 1rem;
+  }
+}
+
+/* Touch-friendly targets */
+@media (hover: none) {
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .project-links a:hover {
+    transform: none;
+  }
+  
+  .tech-tags span:hover {
+    background: rgba(255,255,255,0.06);
+    color: inherit;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .project-links a {
+    transition: none;
   }
 }
